@@ -11,6 +11,7 @@ csv_path = 'predictions.csv'
 
 # Leggi il CSV
 data = pd.read_csv(csv_path)
+conteggio_valori_unici= data[['dominant_color','predicted_labels']].value_counts()
 
 # Crea un grafico
 st.write("Grafico dei dati")
