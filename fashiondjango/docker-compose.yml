@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - web_app_data:/code  # volume per l'applicazione web
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/  # volume per il database
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+
+volumes:
+  postgres_data:
+  web_app_data:  # definizione del volume per l'applicazione web
