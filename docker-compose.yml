@@ -1,6 +1,6 @@
 services:
   web:
-    build: .
+    build: fashiondjango
     command: python /code/manage.py runserver 0.0.0.0:8000
     volumes:
       - web_app_data:/code  # volume per l'applicazione web
