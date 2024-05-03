@@ -1,13 +1,16 @@
 services:
   web:
     build: .  # Cambia questo per puntare alla directory corrente
-    command: python fashiondjango/manage.py runserver localhost:8000
+    command: python fashiondjango/manage.py runserver 0.0.0.0:8000
     volumes:
-      - web_app_data:/code  # volume per l'applicazione web
+      - web_app_data:/fashiondjango  # volume per l'applicazione web
     ports:
       - 8000:8000
     depends_on:
       - db
+
+
+
   db:
     image: postgres:14
     volumes:
