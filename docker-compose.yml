@@ -1,7 +1,7 @@
 services:
   web:
-    build: fashiondjango
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    build: .  # Cambia questo per puntare alla directory corrente
+    command: python fashiondjango/manage.py runserver localhost:8000
     volumes:
       - web_app_data:/code  # volume per l'applicazione web
     ports:
