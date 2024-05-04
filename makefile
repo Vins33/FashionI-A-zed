@@ -16,10 +16,10 @@ logs:
 	docker-compose logs -f
 
 migrate:
-	docker-compose exec web python manage.py migrate
+	docker-compose exec web python fashiondjango/manage.py migrate
 
 makemigrations:
-	docker-compose exec web python manage.py makemigrations
+	docker-compose exec web python fashiondjango/manage.py makemigrations
 
 createsuperuser:
-	docker-compose exec web python manage.py createsuperuser
+	docker-compose exec web python fashiondjango/manage.py createsuperuser
